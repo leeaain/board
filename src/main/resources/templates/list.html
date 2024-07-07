@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaft.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>글 목록</title>
+    <style>
+        table, tr, td, th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a href="/save">글쓰기</a>
+    <table>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>작성시간</th>
+            <th>조회수</th>
+        </tr>
+        <tr th:each="board: ${boardList}">
+            <td th:text="${board.id}"></td>
+            <td>
+                <a th:text="${board.boardTitle}" th:href="@{|/${board.id}|}"></a>
+            </td>
+            <td th:text="${board.boardWriter}"></td>
+            <td th:text="${board.createdAt}"></td>
+            <td th:text="${board.boardHits}"></td>
+        </tr>
+    </table>
+</body>
+</html>

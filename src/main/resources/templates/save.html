@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 글 작성</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #63c2a8;
+            border-color: #63c2a8;
+        }
+        .btn-primary:hover {
+            background-color: #f491b1;
+            border-color: #f491b1;
+        }
+
+        # boardWriter {
+            width: 50%;
+        }
+        # boardPass {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 class="text-center">글 쓰기</h2>
+    <form action="/save" method="post">
+        <div class="form-group">
+            <label for="boardTitle">글 제목</label>
+            <input type="text" class="form-control" id="boardTitle" name="boardTitle" placeholder="글 제목을 입력하세요" required>
+        </div>
+        <div class="form-group">
+            <label for="boardWriter">작성자</label>
+            <input type="text" class="form-control" id="boardWriter" name="boardWriter" placeholder="작성자 이름을 입력하세요" required>
+        </div>
+        <div class="form-group">
+            <label for="boardPass">비밀번호</label>
+            <input type="password" class="form-control" id="boardPass" name="boardPass" placeholder="비밀번호를 입력하세요" required>
+        </div>
+        <div class="form-group">
+            <label for="boardContents">글 내용</label>
+            <textarea class="form-control" id="boardContents" name="boardContents" rows="5" placeholder="글 내용을 입력하세요" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="fileAttached">파일 첨부</label>
+            <input type="file" class="form-control-file" id="fileAttached" name="fileAttached">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">작성</button>
+    </form>
+</div>
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
